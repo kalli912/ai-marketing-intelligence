@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+secrets/
+*.secret
+*.key
+*.pem
+*.p12
+*.pfx
+.pytest_cache/
