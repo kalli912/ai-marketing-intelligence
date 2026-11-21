@@ -86,7 +86,7 @@ ai-marketing-intelligence/
 ### Step 1: Clone the repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/kalli912/ai-marketing-intelligence.git
 cd ai-marketing-intelligence
 ```
 
@@ -138,11 +138,11 @@ python -m uvicorn app.main:app --reload
 
 Backend URL:
 
-`http://127.0.0.1:8000`
+http://127.0.0.1:8000
 
 API documentation:
 
-`http://127.0.0.1:8000/docs`
+http://127.0.0.1:8000/docs
 
 ### Step 2: Start the frontend
 
@@ -154,7 +154,7 @@ python -m streamlit run frontend/streamlit_app.py
 
 Frontend URL:
 
-`http://localhost:8501`
+http://localhost:8501
 
 Enter a website URL in the application and start the SEO audit.
 
@@ -194,26 +194,4 @@ python -m pytest -v
 The tests cover:
 
 - API request validation and responses.
-- Website crawling and URL handling.
-- SEO metric analysis.
-- SEO score calculations.
-- Recommendation generation.
-- Frontend report behavior.
-
-## 10. Limitations
-
-- The crawler audits a maximum of 10 discovered pages per audit.
-- It follows same-domain internal links rather than checking every page on the website.
-- Requests and BeautifulSoup analyze server-returned HTML; JavaScript-rendered content is not executed.
-- Some websites may block automated requests or apply rate limits.
-- Timeout, access restrictions, and HTTP 429 responses are treated as unverified rather than confirmed broken links.
-- SEO scores reflect the configured metrics and thresholds, not a guaranteed Google ranking.
-
-## 11. Future Improvements
-
-- Support JavaScript-rendered websites.
-- Add configurable crawl limits.
-- Improve crawl progress and reporting.
-- Add downloadable PDF or CSV reports.
-- Support historical audits and score comparisons.
-- Add more SEO metrics.s
+- Website crawling and URL handling
