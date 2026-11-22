@@ -8,7 +8,6 @@ Gemini API: I added this as an optional feature that rewords the SEO recommendat
 2. How I Built It
 
 I worked through the project one step at a time:
-
 I started by reading the assignment carefully and choosing five SEO metrics to measure.
 I set up the project structure and my development environment.
 I built the website crawler and the HTML analysis.
@@ -26,9 +25,17 @@ I deliberately kept all SEO metric calculations and the overall score in Python 
 
 My reasoning was that an SEO result should come from what is actually on the page: the real HTML and the real HTTP responses. Doing the calculations in Python means the results are consistent, measurable, and testable. An LLM could give a different answer each time. So AI only plays a supporting role, which is making the recommendation wording clearer.
 
-4. What I'd Improve With One More Day
+4. Examples of AI Limitations
 
-Make the crawler handle rate-limited websites better, since this was the biggest limitation I ran into.
-Test the app on a wider variety of websites.
-Look into supporting JavaScript-rendered pages with Playwright.
-Review the recommendations across different sites to make sure they are practical and tied directly to what the audit found.
+Example 1: API Testing
+Problem: My initial API test setup did not work because of a compatibility issue with the testing dependencies.
+How I checked: I looked at the error and checked the installed package versions.
+What I changed: I installed the required httpx dependency and updated the tests to use ASGITransport and AsyncClient.
+Result: The API tests started working correctly.
+
+Example 2: Website Crawling Timeout
+
+Problem: Some website audits took a long time because checking internal links could take time, especially when websites restricted requests.
+How I checked: I looked into the timeout settings and the crawler's request handling.
+What I changed: I increased the frontend timeout from 300 to 900 seconds and reviewed how the crawler handled website restrictions.
+Result: The frontend had more time to complete longer audits. However, this did not remove website rate-limiting problems.
